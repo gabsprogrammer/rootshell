@@ -6,7 +6,7 @@ A free, Metal-accelerated terminal emulator for iPhone, iPad, Vision Pro, and Ma
 
 ## About
 
-rootshell is a terminal emulator built for Apple platforms. It features GPU-accelerated rendering powered by libghostty, native SSH with jump host support, Secure Enclave key storage, cloud provider integration (AWS, Azure, Linode, DigitalOcean), and Kubernetes node debugging.
+rootshell is a terminal emulator built for Apple platforms. It features GPU-accelerated rendering powered by libghostty, native SSH with jump host support, Secure Enclave key storage, cloud provider integration (AWS, Azure, Linode, DigitalOcean), Kubernetes node debugging, and Rootshell Roam — a mosh-compatible and tssh (QUIC+KCP) mobile terminal protocol with seamless network roaming and session persistence.
 
 For full feature details, screenshots, and documentation, visit **[beta.rootshell.com](https://beta.rootshell.com)**.
 
@@ -72,6 +72,23 @@ rootshell is **completely free** with no ads, subscriptions, or in-app purchases
 - **Auto-start tmux** - Automatically attach to or create tmux sessions on connect
 - **Tailscale Integration** - Device discovery and SSH to your tailnet with no-auth support
 - **Host Shorthand (HSS)** - Pattern-based hostname expansion with YAML configuration
+
+### YubiKey & FIDO2
+- **YubiKey PIV** - SSH authentication with hardware-bound private keys via Lightning, NFC, or USB-C. Supports RSA, ECDSA, and Ed25519 (firmware 5.7+) with key generation directly on device
+- **FIDO2 Security Keys** - Any FIDO2-compatible key (YubiKey 5, SoloKeys, etc.) for touch-to-sign SSH authentication using `webauthn-sk-ecdsa-sha2-nistp256@openssh.com`
+- **Key Import** - Import existing SSH private keys to YubiKey PIV slots with optional keychain deletion
+- **Smart PIN Caching** - Wired connections cache for the session; NFC connections cache across taps with session batching for multi-tab signing
+- **iCloud Sync** - YubiKey references and FIDO2 credential metadata sync across devices; private keys never leave hardware
+
+### Rootshell Roam
+- **Mosh-Compatible Protocol** - Native [mosh](https://mosh.org)-compatible implementation built entirely in Swift with SSP (State Synchronization Protocol) support. Works with any standard mosh-server installation
+- **tssh/trzsz Support** - [tssh](https://github.com/trzsz/trzsz-ssh) connections with UDP-based terminal transport offering full native scrollback and lower interactive latency than mosh
+- **QUIC + KCP Transports** - Choose between QUIC (TLS 1.3, modern congestion control) or KCP (AES-GCM-256) for tssh transport. Configure in Settings → Roam → Transport Mode
+- **Session Resumption** - Roam sessions survive app termination and device reboots. Credentials are stored in the Keychain and sessions resume automatically. tsshd reconnect support requires our [upstream PR](https://github.com/trzsz/tsshd/pull/16) ([fork](https://github.com/kitknox/tsshd))
+- **Seamless Network Roaming** - Switch between WiFi and cellular without dropping your session. Handles IP address changes, network transitions, and temporary connectivity loss with a status banner
+- **STUN Firewall Traversal** - Automatic NAT hole-punching via STUN to enable connections through stateful firewalls without VPN tunnels
+- **Predictive Local Echo** - Keystroke predictions displayed immediately while waiting for server confirmation, making typing responsive on high-latency connections
+- **Hardware-Accelerated Crypto** - Apple hardware-accelerated AES with key state caching for OCB encryption/decryption
 
 ### Cloud & Infrastructure
 - **Cloud Providers** - AWS, Azure, Linode, DigitalOcean, Tailscale with OAuth authentication

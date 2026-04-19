@@ -2,7 +2,11 @@
 
 A free, Metal-accelerated terminal emulator for iPhone, iPad, Vision Pro, and Mac.
 
-**[Website](https://beta.rootshell.com)** · **[TestFlight Beta](https://testflight.apple.com/join/DEVnH3N2)** · **[macOS Download](https://beta.rootshell.com/downloads/rootshell-macos-latest.tar.xz)**
+**[Website](https://beta.rootshell.com)** · **[App Store](https://apps.apple.com/app/rootshell-local-terminal-ssh/id6755794662)** · **[TestFlight Beta](https://testflight.apple.com/join/DEVnH3N2)** · **[macOS Download](https://beta.rootshell.com/downloads/rootshell-macos-latest.tar.xz)**
+
+<a href="https://apps.apple.com/app/rootshell-local-terminal-ssh/id6755794662">
+  <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download on the App Store" height="60">
+</a>
 
 ## About
 
@@ -23,7 +27,7 @@ This repository serves as the **public issue tracker** for rootshell. Use it to:
 Before opening an issue, please:
 
 1. **Check existing issues** to avoid duplicates
-2. **Update to the latest version** via TestFlight or the macOS download
+2. **Update to the latest version** via the App Store, TestFlight, or the macOS download
 3. **Include relevant details** when reporting bugs:
    - App version (Settings → About)
    - Device and OS version
@@ -43,7 +47,9 @@ rootshell is **completely free** with no ads, subscriptions, or in-app purchases
 
 | Platform | Link |
 |----------|------|
-| iOS, iPadOS, visionOS, macOS (sandboxed) | [TestFlight](https://testflight.apple.com/join/DEVnH3N2) |
+| iPhone & iPad | [App Store](https://apps.apple.com/app/rootshell-local-terminal-ssh/id6755794662) |
+| visionOS (beta) | [TestFlight](https://testflight.apple.com/join/DEVnH3N2) |
+| macOS (sandboxed, beta) | [TestFlight](https://testflight.apple.com/join/DEVnH3N2) |
 | macOS (standalone) | [Direct Download](https://beta.rootshell.com/downloads/rootshell-macos-latest.tar.xz) |
 | macOS (Homebrew) | See below |
 
